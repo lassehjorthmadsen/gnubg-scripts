@@ -10,9 +10,7 @@
 
 
 # For this script:
-
-# > sys.path.append('c:\\Users\\LMDN\\gnubg\\scripts')                       # Note: GNUBG should be restarted to load any changes  
-# > from find_blunders import *
+# > from find_blunders import *                                              # Note: GNUBG should be restarted to load any changes 
 
 import gnubg
 
