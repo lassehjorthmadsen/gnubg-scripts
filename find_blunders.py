@@ -21,7 +21,7 @@ def get_files(path="c:\\Users\\lasse\\Dropbox\\Backgammon\\Matches\\Galaxy match
     files = glob.glob(search_pattern)
     return files
 
-def analyze_files(files, out_dir = "c:\\Users\\lasse\\Dropbox\\Backgammon\\Matches\\Galaxy matches\\analyzed\\", ply=3):
+def analyze_files(files, out_dir = "c:\\Users\\lasse\\Dropbox\\Backgammon\\Matches\\Galaxy matches\\analyzed\\", ply=3, sgf=False):
     # Make sure the directory exists, and if not, create it
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
@@ -48,5 +48,6 @@ def analyze_files(files, out_dir = "c:\\Users\\lasse\\Dropbox\\Backgammon\\Match
         txt_file = os.path.join(out_dir, file_name[:-4] + "_analyzed.txt")
 
         # Export the match to .sgf and .txt format
-        gnubg.command(f'save match "{sgf_file}"')
+        if sgf:
+            gnubg.command(f'save match "{sgf_file}"')
         gnubg.command(f'export match text "{txt_file}"')
