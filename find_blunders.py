@@ -30,10 +30,16 @@ def analyze_files(files, out_dir = "c:\\Users\\lasse\\Dropbox\\Backgammon\\Match
     gnubg.command('set analysis cube on')
     gnubg.command('set analysis moves on')
     gnubg.command('set analysis luck off')
+    
     gnubg.command('set analysis chequerplay type evaluation')
     gnubg.command('set analysis chequerplay evaluation prune on')
     gnubg.command('set analysis chequerplay evaluation cubeful on')
     gnubg.command(f'set analysis chequerplay evaluation plies {ply}')
+
+    gnubg.command('set analysis cubedecision type evaluation')
+    gnubg.command('set analysis cubedecision evaluation prune on')
+    gnubg.command('set analysis cubedecision evaluation cubeful on')
+    gnubg.command(f'set analysis cubedecision evaluation plies {ply}')
     
     for file in files:
         # Import the text match file
