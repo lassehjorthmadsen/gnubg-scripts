@@ -14,6 +14,11 @@
 # Example of a command line 
 # import auto "c:/Users/lasse/Dropbox/Backgammon/Matches/Galaxy matches/raw/match972338.txt"
 # import auto "c:\Users\lasse\Dropbox\Backgammon\Matches\Galaxy matches\raw\match972338.txt"
+
+# Examples of this script, work computer
+# > files = get_files('c:/Users/LMDN\OneDrive - Novo Nordisk/R-Projects/backgammon/data-raw/galaxy-matches/raw/')
+# > analyze_files(files, out_dir = 'c:/Users/LMDN\OneDrive - Novo Nordisk/R-Projects/backgammon/data-raw/galaxy-matches/analyzed/', ply = 3)
+
 import gnubg
 import os
 import glob
@@ -59,13 +64,9 @@ def analyze_files(files, out_dir = "c:\\Users\\lasse\\R-projects\\backgammon\\da
         if os.path.exists(txt_file):
             continue
 
-        # Import the text match file
+        # Import and analyze the text match file
         gnubg.command(f'import auto "{file}"')
-
-        # Check and maybe swap players
         maybe_swap_players()
-
-        # Analyze match
         gnubg.command('analyze match')
 
         # Export the match to .sgf and .txt format
