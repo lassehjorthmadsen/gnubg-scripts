@@ -1,13 +1,11 @@
-# Notes for this script:
-# Run the following from gnu-cli command line prompt
-# > from analyze import *                                              # Note: GNUBG should be restarted to load any changes 
 # Example of a command line 
 # import auto "c:/Users/lasse/Dropbox/Backgammon/Matches/Galaxy matches/raw/match972338.txt"
-# import auto "c:\Users\lasse\Dropbox\Backgammon\Matches\Galaxy matches\raw\match972338.txt"
 
-# Examples of this script, work computer
+# Examples of using this scripts
+# Run the following from gnu-cli command line prompt
+# > from analyze import *                                              # Note: GNUBG should be restarted to load any changes 
 # > files = get_files('c:/Users/LMDN\OneDrive - Novo Nordisk/R-Projects/backgammon/data-raw/galaxy-matches/raw/')
-# > analyze_files(files, out_dir = 'c:/Users/LMDN\OneDrive - Novo Nordisk/R-Projects/backgammon/data-raw/galaxy-matches/analyzed/', ply = 3)
+# > analyze_files(files, out_dir = 'c:/Users/LMDN\OneDrive - Novo Nordisk/R-Projects/backgammon/data-raw/galaxy-matches/analyzed/3-ply/', ply = 3)
 
 import gnubg
 import os
