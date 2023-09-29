@@ -1,16 +1,6 @@
-# NOTES
-# -----
-
-# To run functions in a script from the GNUBG command line, I did:
-# gnubg-cli                                                                  # Starts the command line version of GNUBG
-# set player 1 gnu                                                           # Lets gnu make moves for player
-# > from matchseries import playMatchSeries                                  # Imports the playMatchSeries function (> calls python)
-# > playMatchSeries(matchLength=1, noOfMatches=2, statsFile="my_stats.txt")  # Runs playMatchSeries
-# The my_stats.txt file ended up in: c:\Users\LMDN\AppData\Local\gnubg\      # Where gnubg is installed
-
-
-# For this script:
-# > from find_blunders import *                                              # Note: GNUBG should be restarted to load any changes 
+# Notes for this script:
+# Run the following from gnu-cli command line prompt
+# > from analyze import *                                              # Note: GNUBG should be restarted to load any changes 
 # Example of a command line 
 # import auto "c:/Users/lasse/Dropbox/Backgammon/Matches/Galaxy matches/raw/match972338.txt"
 # import auto "c:\Users\lasse\Dropbox\Backgammon\Matches\Galaxy matches\raw\match972338.txt"
