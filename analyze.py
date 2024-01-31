@@ -1,11 +1,15 @@
 # Example of a command line 
 # import auto "c:/Users/lasse/Dropbox/Backgammon/Matches/Galaxy matches/raw/match972338.txt"
 
-# Examples of using this scripts
+### Examples of using this script:
+
 # Run the following from gnu-cli command line prompt
-# > from analyze import *                                              # Note: GNUBG should be restarted to load any changes 
-# > files = get_files('c:/Users/LMDN\OneDrive - Novo Nordisk/R-Projects/backgammon/data-raw/galaxy-matches/raw/')
-# > analyze_files(files, out_dir = 'c:/Users/LMDN\OneDrive - Novo Nordisk/R-Projects/backgammon/data-raw/galaxy-matches/analyzed/3-ply/', ply = 3)
+# > from analyze import *
+
+### Note: GNUBG should be restarted to load any changes 
+
+# > files = get_files('c:/Users/LMDN\OneDrive - Novo Nordisk/R-Projects/bglab/data-raw/Llabba/raw/')
+# > analyze_files(files, name= 'Llabba', out_dir = 'c:/Users/LMDN\OneDrive - Novo Nordisk/R-Projects/bglab/data-raw/Llabbe/analyzed/0-ply/', ply = 0)
 
 import gnubg
 import os
@@ -16,13 +20,13 @@ def get_files(path="c:\\Users\\lasse\\R-projects\\backgammon\\data-raw\\galaxy-m
     files = glob.glob(search_pattern)
     return files
 
-def maybe_swap_players():
+def maybe_swap_players(swap_name):
     match_info = gnubg.match()['match-info']
     o_player_name = match_info['O']['name']
-    if o_player_name != 'lasse':
+    if o_player_name.lower() != swap_name.lower():
         gnubg.command('swap players')
 
-def analyze_files(files, out_dir = "c:\\Users\\lasse\\R-projects\\backgammon\\data-raw\\galaxy-matches\\analyzed\\", ply=3, sgf=False):
+def analyze_files(files, name, out_dir = "c:\\Users\\lasse\\R-projects\\backgammon\\data-raw\\galaxy-matches\\analyzed\\", ply=3, sgf=False):
     # Make sure the directory exists, and if not, create it
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
@@ -54,7 +58,7 @@ def analyze_files(files, out_dir = "c:\\Users\\lasse\\R-projects\\backgammon\\da
 
         # Import and analyze the text match file
         gnubg.command(f'import auto "{file}"')
-        maybe_swap_players()
+        maybe_swap_players(name)
         gnubg.command('analyze match')
 
         # Export the match to .sgf and .txt format
