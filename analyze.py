@@ -9,7 +9,7 @@
 ### Note: GNUBG should be restarted to load any changes 
 
 # > files = get_files('c:/Users/LMDN\OneDrive - Novo Nordisk/R-Projects/bglab/data-raw/Llabba/raw/')
-# > analyze_files(files, name= 'Llabba', out_dir = 'c:/Users/LMDN\OneDrive - Novo Nordisk/R-Projects/bglab/data-raw/Llabbe/analyzed/0-ply/', ply = 0)
+# > analyze_files(files, name= 'Llabba', out_dir = 'c:/Users/LMDN\OneDrive - Novo Nordisk/R-Projects/bglab/data-raw/Llabba/analyzed/0-ply/', ply = 0)
 
 import gnubg
 import os
